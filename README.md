@@ -17,7 +17,7 @@ Script sẽ tự động:
 
 ## Lưu ý khi dùng
 
-- **Không bấm nút maximize (phóng to) cửa sổ app** — gây méo hình và treo CPU do lỗi tương tác giữa Wine và window manager. Chỉ resize thủ công bằng cách kéo viền nếu cần.
+- **Lần chạy đầu tiên sau khi cài** app sẽ vào thẳng màn hình đăng nhập thay vì màn hình đăng ký tài khoản. Tắt app rồi mở lại (qua launcher) để vào đúng màn hình đăng ký username/password.
 - Camera đăng ký qua P2P Cloud (không cùng LAN) cần Internet ra ngoài ổn định tới server Dahua; nếu mạng chặn/lag quốc tế thì các camera đó sẽ không load được dù local vẫn chạy bình thường.
 
 ## Nguồn installer
