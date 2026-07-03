@@ -4,9 +4,17 @@
 
 ## Triển khai trên máy mới
 
+File `.exe` trong `installer/` được lưu qua **Git LFS**. Cần cài `git-lfs` **trước khi clone**, nếu không file tải về sẽ chỉ là pointer text ~130 bytes chứ không phải file thật:
+
 ```bash
+sudo apt install -y git-lfs
+git lfs install
+git clone git@github.com:hatinfotech/smart-pss-ubuntu.git
+cd smart-pss-ubuntu
 ./install.sh
 ```
+
+(Nếu lỡ clone trước khi cài git-lfs, chạy `git lfs pull` trong thư mục repo để tải lại file thật — `install.sh` cũng tự phát hiện và tự chạy bước này giúp bạn.)
 
 Script sẽ tự động:
 1. Cài `wine`, `winetricks` (yêu cầu `sudo`, chỉ hỏi nếu chưa có sẵn)
