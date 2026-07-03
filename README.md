@@ -4,6 +4,8 @@
 
 ## Triển khai trên máy mới
 
+**Không dùng nút "Code → Download ZIP" trên GitHub** — nút này không hỗ trợ Git LFS, sẽ chỉ tải về file pointer text ~130 bytes thay vì file `.exe` thật 117MB. Phải dùng `git clone`.
+
 File `.exe` trong `installer/` được lưu qua **Git LFS**. Cần cài `git-lfs` **trước khi clone**, nếu không file tải về sẽ chỉ là pointer text ~130 bytes chứ không phải file thật:
 
 ```bash
