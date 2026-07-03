@@ -4,21 +4,17 @@
 
 ## Triển khai trên máy mới
 
-**Không dùng nút "Code → Download ZIP" trên GitHub** — nút này không hỗ trợ Git LFS, sẽ chỉ tải về file pointer text ~130 bytes thay vì file `.exe` thật 117MB. Phải dùng `git clone`.
-
-File `.exe` trong `installer/` được lưu qua **Git LFS**. Cần cài `git-lfs` **trước khi clone**, nếu không file tải về sẽ chỉ là pointer text ~130 bytes chứ không phải file thật:
+Chỉ cần 1 lệnh — tự cài `git`/`git-lfs`, tự clone repo, tự chạy cài đặt:
 
 ```bash
-sudo apt install -y git-lfs
-git lfs install
-git clone git@github.com:hatinfotech/smart-pss-ubuntu.git
-cd smart-pss-ubuntu
-./install.sh
+curl -fsSL https://raw.githubusercontent.com/hatinfotech/smart-pss-ubuntu/main/bootstrap.sh | bash
 ```
 
-(Nếu lỡ clone trước khi cài git-lfs, chạy `git lfs pull` trong thư mục repo để tải lại file thật — `install.sh` cũng tự phát hiện và tự chạy bước này giúp bạn.)
+**Không dùng nút "Code → Download ZIP" trên GitHub** — nút này không hỗ trợ Git LFS, sẽ chỉ tải về file pointer text ~130 bytes thay vì file `.exe` thật 117MB.
 
-Script sẽ tự động:
+Nếu đã tự clone repo sẵn rồi (qua `git clone`), chỉ cần chạy `./install.sh` bên trong thư mục repo — script tự phát hiện và tự sửa nếu file `.exe` chưa được Git LFS tải đầy đủ.
+
+`install.sh` sẽ tự động:
 1. Cài `wine`, `winetricks` (yêu cầu `sudo`, chỉ hỏi nếu chưa có sẵn)
 2. Tạo Wine prefix riêng tại `~/.wine-smartpss`
 3. Cài VC++ runtime, corefonts, gdiplus, và **DXVK** (bắt buộc — không có DXVK app sẽ treo/nhiễu hình khi click vào khung camera)
